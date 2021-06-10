@@ -109,7 +109,7 @@ function openModal(event) {
     addClass('is-open');
     lightBoxImgContent(event.target.dataset.source, event.target.alt);
 
-    document.body.addEventListener('keydown', el => {
+    window.addEventListener('keydown', el => {
       if (el.code === 'Escape') {
         closeModal(el);
       }
@@ -126,7 +126,7 @@ function closeModal(event) {
     removeClass('is-open');
     lightBoxImgContent('', '');
 
-    document.body.removeEventListener('keydown', el => {
+    window.removeEventListener('keydown', el => {
       if (el.code === 'Escape') {
         closeModal(el);
       }
