@@ -31,7 +31,6 @@ function createGalleryCards(gallery) {
     src="${preview}"
     data-source="${original}"
     alt="${description}"
-    data-index ="${original}"
     />
     </a>
     </li> `;
@@ -48,8 +47,6 @@ function openModal(event) {
     addClass('is-open');
     lightBoxImgContent(event.target.dataset.source, event.target.alt);
     addEventListenerOnModal();
-
-    currentIndex = event.dataset.index;
   }
 }
 
