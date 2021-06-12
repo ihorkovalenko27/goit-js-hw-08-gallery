@@ -102,11 +102,8 @@ function removeEventListenerFromModal() {
 }
 
 function keyHendler(event) {
-  const key = event.code;
-  switch (key) {
-    case 'Escape':
-      closeModal();
-      break;
+  const value = event.code;
+  switch (value) {
     case 'ArrowRight':
       onArrowRight();
       break;
@@ -122,8 +119,10 @@ function onArrowRight() {
   } else {
     currentIndex += 1;
   }
-  lightBoxImg.src = galleryItems[currentIndex].original;
-  lightBoxImg.alt = galleryItems[currentIndex].description;
+  lightBoxImgContent(
+    galleryItems[currentIndex].original,
+    galleryItems[currentIndex].description,
+  );
 }
 
 function onArrowLeft() {
@@ -132,6 +131,8 @@ function onArrowLeft() {
   } else {
     currentIndex -= 1;
   }
-  lightBoxImg.src = galleryItems[currentIndex].original;
-  lightBoxImg.alt = galleryItems[currentIndex].description;
+  lightBoxImgContent(
+    galleryItems[currentIndex].original,
+    galleryItems[currentIndex].description,
+  );
 }
